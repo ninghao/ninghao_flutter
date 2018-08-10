@@ -17,12 +17,31 @@ class App extends StatelessWidget {
 
 class Home extends StatelessWidget {
   Widget _listItemBuilder(BuildContext context, int index) {
-    return Text(posts[index].title);
+    return Container(
+      color: Colors.white,
+      margin: EdgeInsets.all(8.0),
+      child: Column(
+        children: <Widget>[
+          Image.network(posts[index].imageUrl),
+          SizedBox(height: 16.0),
+          Text(
+            posts[index].title,
+            style: Theme.of(context).textTheme.title
+          ),
+          Text(
+            posts[index].author,
+            style: Theme.of(context).textTheme.subhead
+          ),
+          SizedBox(height: 16.0),
+        ],
+      ),
+    );
   }
 
   @override
     Widget build(BuildContext context) {
       return Scaffold(
+        backgroundColor: Colors.grey[100],
         appBar: AppBar(
           title: Text('NINGHAO'),
           elevation: 0.0,
