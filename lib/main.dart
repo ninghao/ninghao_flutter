@@ -7,18 +7,32 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('NINGHAO'),
-          elevation: 0.0,
-        ),
-        body: Hello()
-      ),
+      home: Home(),
       theme: ThemeData(
         primarySwatch: Colors.yellow
       )
     );
   }
+}
+
+class Home extends StatelessWidget {
+  Widget _listItemBuilder(BuildContext context, int index) {
+    return Text(posts[index].title);
+  }
+
+  @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text('NINGHAO'),
+          elevation: 0.0,
+        ),
+        body: ListView.builder(
+          itemCount: posts.length,
+          itemBuilder: _listItemBuilder,
+        )
+      );
+    }
 }
 
 class Hello extends StatelessWidget {
