@@ -9,7 +9,9 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Home(),
       theme: ThemeData(
-        primarySwatch: Colors.yellow
+        primarySwatch: Colors.yellow,
+        highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+        splashColor: Colors.white70
       )
     );
   }
