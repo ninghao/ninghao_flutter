@@ -19,6 +19,12 @@ class App extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
+  int _currentIndex = 0;
+  
+  void _onTapHandler (int index) {
+    setState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -56,6 +62,8 @@ class Home extends StatelessWidget {
         ),
         drawer: DrawerDemo(),
         bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          onTap: _onTapHandler,
           type: BottomNavigationBarType.fixed,
           fixedColor: Colors.black,
           items: [
