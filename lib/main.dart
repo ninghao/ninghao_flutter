@@ -25,11 +25,6 @@ class Home extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.menu),
-            tooltip: 'Navigration',
-            onPressed: () => debugPrint('Navigration button is pressed.'),
-          ),
           title: Text('NINGHAO'),
           actions: <Widget>[
             IconButton(
@@ -71,14 +66,17 @@ class Home extends StatelessWidget {
               ListTile(
                 title: Text('Messages', textAlign: TextAlign.right,),
                 trailing: Icon(Icons.message, color: Colors.black12, size: 22.0),
+                onTap: () => Navigator.pop(context),
               ),
               ListTile(
                 title: Text('Favorite', textAlign: TextAlign.right,),
                 trailing: Icon(Icons.favorite, color: Colors.black12, size: 22.0),
+                onTap: () => Navigator.pop(context),
               ),
               ListTile(
                 title: Text('Settings', textAlign: TextAlign.right,),
                 trailing: Icon(Icons.settings, color: Colors.black12, size: 22.0),
+                onTap: () => Navigator.pop(context),
               ),
             ],
           ),
