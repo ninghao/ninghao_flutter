@@ -3,6 +3,13 @@ import 'package:flutter/material.dart';
 class BasicDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return ContainerBoxDecorationDemo();
+  }
+}
+
+class ContainerBoxDecorationDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return Container(
       // color: Colors.grey[100],
       decoration: BoxDecoration(
