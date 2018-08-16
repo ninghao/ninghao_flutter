@@ -23,6 +23,14 @@ class BasicDemo extends StatelessWidget {
                 style: BorderStyle.solid,
               ),
               borderRadius: BorderRadius.circular(16.0),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0.0, 16.0),
+                  color: Color.fromRGBO(16, 20, 188, 1.0),
+                  blurRadius: 25.0,
+                  spreadRadius: -9.0,
+                ),
+              ],
             ),
           ),
         ],
