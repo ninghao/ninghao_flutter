@@ -22,7 +22,7 @@ class BasicDemo extends StatelessWidget {
                 width: 3.0,
                 style: BorderStyle.solid,
               ),
-              borderRadius: BorderRadius.circular(16.0),
+              // borderRadius: BorderRadius.circular(16.0),
               boxShadow: [
                 BoxShadow(
                   offset: Offset(0.0, 16.0),
@@ -31,6 +31,7 @@ class BasicDemo extends StatelessWidget {
                   spreadRadius: -9.0,
                 ),
               ],
+              shape: BoxShape.circle,
             ),
           ),
         ],
