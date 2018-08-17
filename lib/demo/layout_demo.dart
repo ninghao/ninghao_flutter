@@ -4,11 +4,12 @@ class LayoutDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Row(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
           IconBadge(Icons.pool),
-          IconBadge(Icons.beach_access),
+          IconBadge(Icons.beach_access, size: 64.0),
           IconBadge(Icons.airplanemode_active),
         ],
       ),
