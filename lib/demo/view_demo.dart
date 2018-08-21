@@ -4,6 +4,10 @@ class ViewDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView(
+      // pageSnapping: false,
+      // reverse: true,
+      // scrollDirection: Axis.vertical,
+      onPageChanged: (currentPage) => debugPrint('Page: $currentPage'),
       children: <Widget>[
         Container(
           color: Colors.brown[900],
