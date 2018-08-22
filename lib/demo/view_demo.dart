@@ -2,9 +2,26 @@ import 'package:flutter/material.dart';
 import '../model/post.dart';
 
 class ViewDemo extends StatelessWidget {
+  List<Widget> _buildTiles(int length) {
+    return List.generate(length, (int index) {
+      return Container(
+        color: Colors.grey[300],
+        alignment: Alignment(0.0, 0.0),
+        child:
+            Text('Item $index', style: TextStyle(fontSize: 18.0, color: Colors.grey)),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return PageViewBuilderDemo();
+    return GridView.count(
+      crossAxisCount: 3,
+      crossAxisSpacing: 16.0,
+      mainAxisSpacing: 16.0,
+      scrollDirection: Axis.horizontal,
+      children: _buildTiles(100),
+    );
   }
 }
 
