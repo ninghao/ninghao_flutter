@@ -23,9 +23,8 @@ class FormDemo extends StatelessWidget {
 }
 
 class TextFieldDemo extends StatefulWidget{
-  TextFieldDemoState createState()=>  TextFieldDemoState();
+  TextFieldDemoState createState() => TextFieldDemoState();
 }
-
 
 class TextFieldDemoState extends State<TextFieldDemo> {
   @override
