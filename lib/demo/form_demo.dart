@@ -30,6 +30,12 @@ class TextFieldDemoState extends State<TextFieldDemo> {
   @override
   Widget build(BuildContext context){
     return TextField(
+      onChanged: (value) {
+        debugPrint('input: $value');
+      },
+      onSubmitted: (value) {
+        debugPrint('submit: $value');
+      },
       decoration: InputDecoration(
         icon: Icon(Icons.subject),
         labelText: 'Title',
