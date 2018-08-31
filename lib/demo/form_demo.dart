@@ -30,7 +30,7 @@ class RegisterFormState extends State<RegisterForm> {
   final registerFormKey = GlobalKey<FormState>();
   String username, password;
 
-  void submitRegisterForm () {
+  void submitRegisterForm() {
     registerFormKey.currentState.save();
 
     debugPrint('username: $username');
