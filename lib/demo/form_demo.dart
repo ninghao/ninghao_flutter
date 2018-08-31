@@ -27,21 +27,38 @@ class RegisterForm extends StatefulWidget{
 }
 
 class RegisterFormState extends State<RegisterForm> {
+  final registerFormKey = GlobalKey<FormState>();
+  String username, password;
+
+  void submitRegisterForm () {
+    registerFormKey.currentState.save();
+
+    debugPrint('username: $username');
+    debugPrint('password: $password');
+  }
+
   @override
   Widget build(BuildContext context){
     return Form(
+      key: registerFormKey,
       child: Column(
         children: <Widget>[
           TextFormField(
             decoration: InputDecoration(
               labelText: 'Username',
             ),
+            onSaved: (value) {
+              username = value;
+            },
           ),
           TextFormField(
             obscureText: true,
             decoration: InputDecoration(
               labelText: 'Password',
             ),
+            onSaved: (value) {
+              password = value;
+            },
           ),
           SizedBox(height: 32.0,),
           Container(
@@ -50,7 +67,7 @@ class RegisterFormState extends State<RegisterForm> {
               color: Theme.of(context).accentColor,
               child: Text('Register', style: TextStyle(color: Colors.white)),
               elevation: 0.0,
-              onPressed: () {},              
+              onPressed: submitRegisterForm,              
             ),
           ),
         ],
