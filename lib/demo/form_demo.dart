@@ -68,7 +68,7 @@ class RegisterFormState extends State<RegisterForm> {
   }
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Form(
       key: registerFormKey,
       child: Column(
