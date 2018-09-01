@@ -22,7 +22,8 @@ class FormDemo extends StatelessWidget {
   }
 }
 
-class RegisterForm extends StatefulWidget{
+class RegisterForm extends StatefulWidget {
+  @override
   RegisterFormState createState() => RegisterFormState();
 }
 
@@ -111,7 +112,8 @@ class RegisterFormState extends State<RegisterForm> {
   }
 }
 
-class TextFieldDemo extends StatefulWidget{
+class TextFieldDemo extends StatefulWidget {
+  @override
   TextFieldDemoState createState() => TextFieldDemoState();
 }
 
