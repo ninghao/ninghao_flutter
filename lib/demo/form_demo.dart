@@ -68,7 +68,7 @@ class RegisterFormState extends State<RegisterForm> {
   }
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Form(
       key: registerFormKey,
       child: Column(
@@ -138,7 +138,7 @@ class TextFieldDemoState extends State<TextFieldDemo> {
   }
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return TextField(
       controller: textEditingController,
       // onChanged: (value) {
