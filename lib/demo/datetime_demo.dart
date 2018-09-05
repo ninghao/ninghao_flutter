@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'dart:async';
 
 class DateTimeDemo extends StatefulWidget {
   @override
@@ -7,15 +8,21 @@ class DateTimeDemo extends StatefulWidget {
 }
 
 class _DateTimeDemoState extends State<DateTimeDemo> {
-  final DateTime selectedDate = DateTime.now();
+  DateTime selectedDate = DateTime.now();
   
-  _selectDate() {
-    showDatePicker(
+  _selectDate() async {
+    final DateTime date = await showDatePicker(
       context: context,
       initialDate: selectedDate,
       firstDate: DateTime(1900),
       lastDate: DateTime(2100),
     );
+
+    if (date == null) return;
+
+    setState(() {
+      selectedDate = date;
+    });
   }
   
   @override
