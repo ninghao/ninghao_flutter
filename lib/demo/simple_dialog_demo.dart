@@ -13,7 +13,24 @@ class _SimpleDialogDemoState extends State<SimpleDialogDemo> {
         return SimpleDialog(
           title: Text('SimpleDialog'),
           children: <Widget>[
-            
+            SimpleDialogOption(
+              child: Text('Option A'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            SimpleDialogOption(
+              child: Text('Option B'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            SimpleDialogOption(
+              child: Text('Option C'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
           ],
         );
       }
