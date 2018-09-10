@@ -7,6 +7,9 @@ class DataTableDemo extends StatefulWidget {
 }
 
 class _DataTableDemoState extends State<DataTableDemo> {
+  int _sortColumnIndex;
+  bool _sortAscending = true;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,9 +22,27 @@ class _DataTableDemoState extends State<DataTableDemo> {
         child: ListView(
           children: <Widget>[
             DataTable(
+              sortColumnIndex: _sortColumnIndex,
+              sortAscending: _sortAscending,
               columns: [
                 DataColumn(
                   label: Text('Title'),
+                  onSort: (int index, bool ascending) {
+                    setState(() {
+                      _sortColumnIndex = index;
+                      _sortAscending = ascending;
+
+                      posts.sort((a, b) {
+                        if (!ascending) {
+                          final c = a;
+                          a = b;
+                          b = c;
+                        }
+
+                        return a.title.length.compareTo(b.title.length);
+                      });
+                    });
+                  },
                 ),
                 DataColumn(
                   label: Text('Author'),
