@@ -1,5 +1,5 @@
 class Post {
-  const Post({
+  Post({
     this.title,
     this.author,
     this.imageUrl,
