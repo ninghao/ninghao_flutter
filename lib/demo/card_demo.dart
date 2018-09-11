@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../model/post.dart';
 
 class CardDemo extends StatefulWidget {
   @override
@@ -15,16 +16,47 @@ class _CardDemoState extends State<CardDemo> {
       ),
       body: Container(
         padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                
-              ],
-            ),
-          ],
+        child: ListView(
+          children: posts.map((post) {
+            return Card(
+              child: Column(
+                children: <Widget>[
+                  AspectRatio(
+                    aspectRatio: 16/9,
+                    child: Image.network(
+                      post.imageUrl,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: NetworkImage(post.imageUrl),
+                    ),
+                    title: Text(post.title),
+                    subtitle: Text(post.author),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text(post.description, maxLines: 2, overflow: TextOverflow.ellipsis,),
+                  ),
+                  ButtonTheme.bar(
+                    child: ButtonBar(
+                      children: <Widget>[
+                        FlatButton(
+                          child: Text('Like'.toUpperCase()),
+                          onPressed: () {},
+                        ),
+                        FlatButton(
+                          child: Text('Read'.toUpperCase()),
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }).toList(),
         ),
       )
     );
