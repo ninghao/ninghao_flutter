@@ -15,11 +15,7 @@ class _StateManagementDemoState extends State<StateManagementDemo> {
         title: Text('StateManagementDemo'),
         elevation: 0.0,
       ),
-      body: Center(
-        child: Chip(
-          label: Text('$_count'),
-        ),
-      ),
+      body: Counter(_count),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
@@ -28,6 +24,21 @@ class _StateManagementDemoState extends State<StateManagementDemo> {
           });
           print(_count);
         },
+      ),
+    );
+  }
+}
+
+class Counter extends StatelessWidget {
+  final int count;
+
+  Counter(this.count);
+  
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Chip(
+        label: Text('$count'),
       ),
     );
   }
