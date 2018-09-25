@@ -249,6 +249,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.0+1"
+  scoped_model:
+    dependency: "direct main"
+    description:
+      name: scoped_model
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.3.0"
   shelf:
     dependency: transitive
     description:
