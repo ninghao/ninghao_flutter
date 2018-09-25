@@ -17,45 +17,61 @@ class _StateManagementDemoState extends State<StateManagementDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('StateManagementDemo'),
-        elevation: 0.0,
-      ),
-      body: CounterWrapper(_count, _increaseCount),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: _increaseCount,
+    return CounterProvider(
+      count: _count,
+      increaseCount: _increaseCount,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('StateManagementDemo'),
+          elevation: 0.0,
+        ),
+        body: CounterWrapper(),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: _increaseCount,
+        ),
       ),
     );
   }
 }
 
 class CounterWrapper extends StatelessWidget {
-  final int count;
-  final VoidCallback increaseCount;
-
-  CounterWrapper(this.count, this.increaseCount);
-  
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Counter(count, increaseCount),
+      child: Counter(),
     );
   }
 }
 
 class Counter extends StatelessWidget {
-  final int count;
-  final VoidCallback increaseCount;
-
-  Counter(this.count, this.increaseCount);
-
   @override
   Widget build(BuildContext context) {
+    final int count = CounterProvider.of(context).count;
+    final VoidCallback increaseCount = CounterProvider.of(context).increaseCount;
     return ActionChip(
       label: Text('$count'),
       onPressed: increaseCount,
     );
+  }
+}
+
+class CounterProvider extends InheritedWidget {
+  final int count;
+  final VoidCallback increaseCount;
+  final Widget child;
+
+  CounterProvider({
+    this.count,
+    this.increaseCount,
+    this.child,
+  }) : super(child: child);
+
+  static CounterProvider of(BuildContext context) =>
+      context.inheritFromWidgetOfExactType(CounterProvider);
+
+  @override
+  bool updateShouldNotify(InheritedWidget oldWidget) {
+    return true;
   }
 }
