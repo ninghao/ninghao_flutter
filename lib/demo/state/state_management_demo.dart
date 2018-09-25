@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class StateManagementDemo extends StatelessWidget {
-  int count = 0;
-  
+class StateManagementDemo extends StatefulWidget {
+  @override
+  _StateManagementDemoState createState() => _StateManagementDemoState();
+}
+
+class _StateManagementDemoState extends State<StateManagementDemo> {
+  int _count = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,14 +17,16 @@ class StateManagementDemo extends StatelessWidget {
       ),
       body: Center(
         child: Chip(
-          label: Text('$count'),
+          label: Text('$_count'),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          count += 1;
-          print(count);
+          setState(() {
+            _count += 1;
+          });
+          print(_count);
         },
       ),
     );
