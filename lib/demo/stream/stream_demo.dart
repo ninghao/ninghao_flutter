@@ -24,6 +24,7 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
   StreamSubscription _streamDemoSubscription;
   StreamController<String> _streamDemo;
   StreamSink _sinkDemo;
+  String _data = '...';
 
   @override
   void dispose() {
@@ -58,6 +59,9 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
   }
 
   void onData(String data) {
+    setState(() {
+      _data = data;
+    });
     print('$data');
   }
 
@@ -98,24 +102,30 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            FlatButton(
-              child: Text('Add'),
-              onPressed: _addDataToStream,
-            ),
-            FlatButton(
-              child: Text('Pause'),
-              onPressed: _pauseStream,
-            ),
-            FlatButton(
-              child: Text('Resume'),
-              onPressed: _resumeStream,
-            ),
-            FlatButton(
-              child: Text('Cancel'),
-              onPressed: _cancelStream,
+            Text(_data),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                FlatButton(
+                  child: Text('Add'),
+                  onPressed: _addDataToStream,
+                ),
+                FlatButton(
+                  child: Text('Pause'),
+                  onPressed: _pauseStream,
+                ),
+                FlatButton(
+                  child: Text('Resume'),
+                  onPressed: _resumeStream,
+                ),
+                FlatButton(
+                  child: Text('Cancel'),
+                  onPressed: _cancelStream,
+                ),
+              ],
             ),
           ],
         ),
