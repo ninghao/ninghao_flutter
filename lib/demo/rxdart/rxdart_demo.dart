@@ -35,10 +35,12 @@ class _RxDartDemoHomeState extends State<RxDartDemoHome> {
     // _observable.listen(print);
 
     // PublishSubject<String> _subject = PublishSubject<String>();
-    BehaviorSubject<String> _subject = BehaviorSubject<String>();
+    // BehaviorSubject<String> _subject = BehaviorSubject<String>();
+    ReplaySubject<String> _subject = ReplaySubject<String>(maxSize: 2);
 
     _subject.add('hello');
     _subject.add('hola');
+    _subject.add('hi');
     _subject.listen((data) => print('listen 1: $data'));
     _subject.listen((data) => print('listen 2: ${data.toUpperCase()}'));
 
