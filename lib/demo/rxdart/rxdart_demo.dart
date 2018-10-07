@@ -31,7 +31,8 @@ class _RxDartDemoHomeState extends State<RxDartDemoHome> {
 
     _textFieldSubject
       // .map((item) => 'item: $item')
-      .where((item) => item.length > 9)
+      // .where((item) => item.length > 9)
+      .debounce(Duration(milliseconds: 500))
       .listen((data) => print(data));
 
     // Observable<String> _observable =
