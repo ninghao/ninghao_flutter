@@ -30,7 +30,8 @@ class _RxDartDemoHomeState extends State<RxDartDemoHome> {
     _textFieldSubject = PublishSubject<String>();
 
     _textFieldSubject
-      .map((item) => 'item: $item')
+      // .map((item) => 'item: $item')
+      .where((item) => item.length > 9)
       .listen((data) => print(data));
 
     // Observable<String> _observable =
