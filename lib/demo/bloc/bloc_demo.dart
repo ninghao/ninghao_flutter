@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ninghao_flutter/demo/bloc/counter_bloc_demo.dart';
 
 class BlocDemo extends StatelessWidget {
   @override
@@ -8,6 +9,8 @@ class BlocDemo extends StatelessWidget {
         title: Text('BlocDemo'),
         elevation: 0.0,
       ),
+      body: CounterHome(),
+      floatingActionButton: CounterActionButton(),
     );
   }
 }
