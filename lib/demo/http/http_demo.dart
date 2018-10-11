@@ -46,6 +46,8 @@ class _HttpDemoHomeState extends State<HttpDemoHome> {
 
     final postModel = Post.fromJson(postJsonConverted);
     print('title: ${postModel.title}, description: ${postModel.description}');
+
+    print('${json.encode(postModel)}');
   }
 
   fetchPost() async {
@@ -74,4 +76,9 @@ class Post {
   Post.fromJson(Map json)
     : title = json['title'],
       description = json['description'];
+
+  Map toJson() => {
+    'title': title,
+    'descritpion': description,
+  };
 }
