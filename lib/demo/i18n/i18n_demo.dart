@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ninghao_flutter/demo/i18n/map/ninghao_demo_localizations.dart';
+// import 'package:ninghao_flutter/demo/i18n/map/ninghao_demo_localizations.dart';
+import 'package:ninghao_flutter/demo/i18n/intl/ninghao_demo_localizations.dart';
 
 class I18nDemo extends StatelessWidget {
   @override
@@ -18,7 +19,8 @@ class I18nDemo extends StatelessWidget {
             Text(locale.toString()),
             Text(
               // Localizations.of(context, NinghaoDemoLocalizations).title,
-              NinghaoDemoLocalizations.of(context).title,
+              // NinghaoDemoLocalizations.of(context).title,
+              NinghaoDemoLocalizations.of(context).greet('ninghao'),
               style: Theme.of(context).textTheme.title,
             )
           ],

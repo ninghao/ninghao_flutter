@@ -17,7 +17,8 @@ import './demo/navigator_demo.dart';
 import './demo/form_demo.dart';
 import './demo/material_components.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:ninghao_flutter/demo/i18n/map/ninghao_demo_localizations.dart';
+// import 'package:ninghao_flutter/demo/i18n/map/ninghao_demo_localizations.dart';
+import 'package:ninghao_flutter/demo/i18n/intl/ninghao_demo_localizations.dart';
 
 void main() => runApp(App());
 
@@ -25,8 +26,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // locale: Locale('en', 'US'),
-      locale: Locale('zh', 'CN'),
+      locale: Locale('en', 'US'),
+      // locale: Locale('zh', 'CN'),
       // localeResolutionCallback: (Locale locale, Iterable<Locale> supportedLocales) {
       //   return Locale('en', 'US');
       // },
