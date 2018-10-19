@@ -17,6 +17,7 @@ import './demo/navigator_demo.dart';
 import './demo/form_demo.dart';
 import './demo/material_components.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:ninghao_flutter/demo/i18n/map/ninghao_demo_localizations.dart';
 
 void main() => runApp(App());
 
@@ -29,6 +30,7 @@ class App extends StatelessWidget {
         return Locale('en', 'US');
       },
       localizationsDelegates: [
+        NinghaoDemoLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
