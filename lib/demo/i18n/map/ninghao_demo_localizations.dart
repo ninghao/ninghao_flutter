@@ -6,6 +6,13 @@ class NinghaoDemoLocalizations {
 
   NinghaoDemoLocalizations(this.locale);
 
+  static NinghaoDemoLocalizations of(BuildContext context) {
+    return Localizations.of<NinghaoDemoLocalizations>(
+      context,
+      NinghaoDemoLocalizations
+    );
+  }
+
   static Map<String, Map<String, String>> _localized = {
     'en': {
       'title': 'hello',
