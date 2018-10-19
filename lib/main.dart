@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ninghao_flutter/demo/animation/animation_demo.dart';
 import 'package:ninghao_flutter/demo/bloc/bloc_demo.dart';
 import 'package:ninghao_flutter/demo/http/http_demo.dart';
+import 'package:ninghao_flutter/demo/i18n/i18n_demo.dart';
 import 'package:ninghao_flutter/demo/rxdart/rxdart_demo.dart';
 import 'package:ninghao_flutter/demo/state/state_management_demo.dart';
 import 'package:ninghao_flutter/demo/stream/stream_demo.dart';
@@ -24,7 +25,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: NavigatorDemo(),
-      initialRoute: '/animation',
+      initialRoute: '/i18n',
       routes: {
         '/': (context) => Home(),
         '/about': (context) => Page(title: 'About'),
@@ -36,6 +37,7 @@ class App extends StatelessWidget {
         '/bloc': (context) => BlocDemo(),
         '/http': (context) => HttpDemo(),
         '/animation': (context) => AnimationDemo(),
+        '/i18n': (context) => I18nDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
