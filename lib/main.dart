@@ -6,6 +6,7 @@ import 'package:ninghao_flutter/demo/i18n/i18n_demo.dart';
 import 'package:ninghao_flutter/demo/rxdart/rxdart_demo.dart';
 import 'package:ninghao_flutter/demo/state/state_management_demo.dart';
 import 'package:ninghao_flutter/demo/stream/stream_demo.dart';
+import 'package:ninghao_flutter/demo/test/test_demo.dart';
 import './demo/drawer_demo.dart';
 import './demo/bottom_navigation_bar_demo.dart';
 import './demo/listview_demo.dart';
@@ -42,7 +43,7 @@ class App extends StatelessWidget {
       ],
       debugShowCheckedModeBanner: false,
       // home: NavigatorDemo(),
-      initialRoute: '/i18n',
+      initialRoute: '/test',
       routes: {
         '/': (context) => Home(),
         '/about': (context) => Page(title: 'About'),
@@ -55,6 +56,7 @@ class App extends StatelessWidget {
         '/http': (context) => HttpDemo(),
         '/animation': (context) => AnimationDemo(),
         '/i18n': (context) => I18nDemo(),
+        '/test': (context) => TestDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
