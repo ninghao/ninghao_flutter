@@ -14,5 +14,11 @@ void main() {
         home: TestDemo()
       )
     );
+
+    final labelText = find.text('hello');
+
+    // expect(labelText, findsNothing);
+    // expect(labelText, findsOneWidget);
+    expect(labelText, findsNWidgets(1));
   });
 }
