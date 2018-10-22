@@ -19,10 +19,24 @@ class TestDemoHome extends StatefulWidget {
 }
 
 class _TestDemoHomeState extends State<TestDemoHome> {
+  int count = 0;
+  
   @override
   Widget build(BuildContext context) {
-    return Chip(
-      label: Text('hello'),
+    return Row(
+      children: <Widget>[
+        Chip(
+          label: Text('hello'),
+        ),
+        ActionChip(
+          label: Text('$count'),
+          onPressed: () {
+            setState(() {
+              count++;
+            });
+          },
+        )
+      ],
     );
   }
 }
