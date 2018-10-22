@@ -14,6 +14,6 @@ class TestDemo extends StatelessWidget {
 
 class NinghaoTestDemo {
   static greet(String name) {
-    return 'hello $name';
+    return 'hello $name ~~';
   }
 }

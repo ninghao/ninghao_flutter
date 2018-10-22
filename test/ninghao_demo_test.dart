@@ -4,6 +4,6 @@ import 'package:ninghao_flutter/demo/test/test_demo.dart';
 void main() {
   test('should return hello + something.', () {
     var string = NinghaoTestDemo.greet('ninghao');
-    expect(string, 'hello ninghao');
+    expect(string, 'hello ninghao ~~');
   });
 }
