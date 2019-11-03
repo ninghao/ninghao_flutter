@@ -27,44 +27,43 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: Locale('en', 'US'),
-      // locale: Locale('zh', 'CN'),
-      // localeResolutionCallback: (Locale locale, Iterable<Locale> supportedLocales) {
-      //   return Locale('en', 'US');
-      // },
-      localizationsDelegates: [
-        NinghaoDemoLocalizationsDelegate(),
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      supportedLocales: [
-        Locale('en', 'US'),
-        Locale('zh', 'CN'),
-      ],
-      debugShowCheckedModeBanner: false,
-      // home: NavigatorDemo(),
-      initialRoute: '/test',
-      routes: {
-        '/': (context) => Home(),
-        '/about': (context) => Page(title: 'About'),
-        '/form': (context) => FormDemo(),
-        '/mdc': (context) => MaterialComponents(),
-        '/state-management': (context) => StateManagementDemo(),
-        '/stream': (context) => StreamDemo(),
-        '/rxdart': (context) => RxDartDemo(),
-        '/bloc': (context) => BlocDemo(),
-        '/http': (context) => HttpDemo(),
-        '/animation': (context) => AnimationDemo(),
-        '/i18n': (context) => I18nDemo(),
-        '/test': (context) => TestDemo(),
-      },
-      theme: ThemeData(
-        primarySwatch: Colors.yellow,
-        highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
-        splashColor: Colors.white70,
-        accentColor:  Color.fromRGBO(3, 54, 255, 1.0),
-      )
-    );
+        locale: Locale('en', 'US'),
+        // locale: Locale('zh', 'CN'),
+        // localeResolutionCallback: (Locale locale, Iterable<Locale> supportedLocales) {
+        //   return Locale('en', 'US');
+        // },
+        localizationsDelegates: [
+          NinghaoDemoLocalizationsDelegate(),
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          Locale('en', 'US'),
+          Locale('zh', 'CN'),
+        ],
+        debugShowCheckedModeBanner: false,
+        // home: NavigatorDemo(),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => Home(),
+          '/about': (context) => Page(title: 'About'),
+          '/form': (context) => FormDemo(),
+          '/mdc': (context) => MaterialComponents(),
+          '/state-management': (context) => StateManagementDemo(),
+          '/stream': (context) => StreamDemo(),
+          '/rxdart': (context) => RxDartDemo(),
+          '/bloc': (context) => BlocDemo(),
+          '/http': (context) => HttpDemo(),
+          '/animation': (context) => AnimationDemo(),
+          '/i18n': (context) => I18nDemo(),
+          '/test': (context) => TestDemo(),
+        },
+        theme: ThemeData(
+          primarySwatch: Colors.yellow,
+          highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+          splashColor: Colors.white70,
+          accentColor: Color.fromRGBO(3, 54, 255, 1.0),
+        ));
   }
 }
 
